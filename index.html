@@ -2,41 +2,120 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Saint-Valentin</title>
+<title>Pour Toi ❤️</title>
 <style>
 body {
   text-align: center;
   font-family: Arial, sans-serif;
-  background-color: #ffe6f0;
-  margin-top: 100px;
+  background: linear-gradient(to bottom, #ffe6f0, #ffccd5);
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 40px;
+}
+
+.flowers img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 15px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 18px;
   margin: 20px;
   cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#oui {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#non {
+  background-color: #6c757d;
+  color: white;
   position: relative;
+}
+
+#declaration {
+  display: none;
+  max-width: 700px;
+  margin: 30px auto;
+  font-size: 18px;
+  line-height: 1.6;
 }
 </style>
 </head>
 <body>
 
-<h1>Veux-tu être ma Valentine ? ❤️</h1>
+<h1>Une petite question pour toi... 💌</h1>
 
-<button onclick="oui()">Oui 😍</button>
+<div class="flowers">
+  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+</div>
+
+<h2>Veux-tu être ma Valentine ? 🌹</h2>
+
+<button id="oui" onclick="oui()">Oui 😍</button>
 <button id="non" onmouseover="deplacer()">Non 🙈</button>
+
+<div id="suite" style="display:none;">
+  <h2>Je le savais... ❤️</h2>
+  <button onclick="afficherDeclaration()">Lire ma déclaration 💌</button>
+</div>
+
+<div id="declaration">
+  <p>
+  Merci d’être toujours là pour moi.  
+  Merci pour ta patience, pour ton soutien, pour ta présence même quand les kilomètres essaient de nous séparer.  
+  Tu es une force tranquille dans ma vie, et je ne te le dis peut-être pas assez.
+  </p>
+
+  <p>
+  Je sais que ton concours te demande beaucoup.  
+  Mais je sais aussi que tu es capable de grandes choses.  
+  Tu as la détermination, l’intelligence et la constance.  
+  Je crois en toi — sincèrement.
+  </p>
+
+  <p>
+  La distance n’est qu’une étape.  
+  Ce n’est pas une fin.  
+  Ce n’est pas une menace.  
+  C’est juste un passage vers quelque chose de plus grand.
+  </p>
+
+  <p>
+  Et peu importe les kilomètres,  
+  je reste là.  
+  Avec toi.
+  </p>
+
+  <h3>❤️</h3>
+</div>
 
 <script>
 function oui() {
-  document.body.innerHTML = "<h1>Je savais que tu dirais oui, mon amoureuse ❤️</h1>";
+  document.getElementById("suite").style.display = "block";
+}
+
+function afficherDeclaration() {
+  document.getElementById("declaration").style.display = "block";
 }
 
 function deplacer() {
   let bouton = document.getElementById("non");
   bouton.style.position = "absolute";
-  bouton.style.left = Math.random() * window.innerWidth + "px";
-  bouton.style.top = Math.random() * window.innerHeight + "px";
+  bouton.style.left = Math.random() * (window.innerWidth - 100) + "px";
+  bouton.style.top = Math.random() * (window.innerHeight - 50) + "px";
 }
 </script>
 
