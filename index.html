@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Saint-Valentin</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f0;
+  margin-top: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 20px;
+  cursor: pointer;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<h1>Veux-tu être ma Valentine ? ❤️</h1>
+
+<button onclick="oui()">Oui 😍</button>
+<button id="non" onmouseover="deplacer()">Non 🙈</button>
+
+<script>
+function oui() {
+  document.body.innerHTML = "<h1>Je savais que tu dirais oui ❤️</h1>";
+}
+
+function deplacer() {
+  let bouton = document.getElementById("non");
+  bouton.style.position = "absolute";
+  bouton.style.left = Math.random() * window.innerWidth + "px";
+  bouton.style.top = Math.random() * window.innerHeight + "px";
+}
+</script>
+
+</body>
+</html>
